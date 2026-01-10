@@ -2,7 +2,7 @@
 // // // import Hello1 from "./hello1"
 // // // import Welcome from "./Welcome"
 
-import Counter from "./counter"
+// import Counter from "./counter"
 
 // import Counter from "./counter"
 
@@ -57,16 +57,16 @@ import Counter from "./counter"
 
 //       export default App
 
-import "../src/styles/counter.css";
+// import "../src/styles/counter.css";
 
-function App() {
-		return(
-			<>
-			 <Counter/>
-			</>
-			)
-		}
-		export default App
+// function App() {
+// 		return(
+// 			<>
+// 			 <Counter/>
+// 			</>
+// 			)
+// 		}
+// 		export default App
 		
 
 // 		import BgColor from "./BgColor"
@@ -77,3 +77,11 @@ function App() {
 // }
 // export default App
  
+import Counter from "./counter"
+function App() {
+	return(
+		<Counter/>
+	)
+}
+
+export default App;
