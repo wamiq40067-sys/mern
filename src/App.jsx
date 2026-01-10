@@ -1,7 +1,12 @@
+
 // // // import Hello1 from "./hello1"
 // // // import Welcome from "./Welcome"
 
-import Card2 from "./Card2"
+import Counter from "./counter"
+
+// import Counter from "./counter"
+
+// import Card2 from "./Card2"
 
 // function App(){
 //   return(
@@ -33,23 +38,42 @@ import Card2 from "./Card2"
 
 // export default App
 
-function Header(){
-					return <h1>Thin is header</h1>
-				}					
-			function Footer(){
-					return<h2> This is footer </h2> 
-				}	
-			function App(){
-        return(
+// function Header(){
+// 					return <h1>Thin is header</h1>
+// 				}					
+// 			function Footer(){
+// 					return<h2> This is footer </h2> 
+// 				}	
+// 			function App(){
+//         return(
           
-          <>
-					<Header/>
-					<p>This is Nested Component</p>
-					<Footer/>
-				</>
-    )
-			}
+//           <>
+// 					<Header/>
+// 					<p>This is Nested Component</p>
+// 					<Footer/>
+// 				</>
+//     )
+// 			}
 
-      export default App
+//       export default App
 
-      
+import "../src/styles/counter.css";
+
+function App() {
+		return(
+			<>
+			 <Counter/>
+			</>
+			)
+		}
+		export default App
+		
+
+// 		import BgColor from "./BgColor"
+// function App () {
+// 	return(
+// 		<BgColor/>
+// 	)
+// }
+// export default App
+ 
