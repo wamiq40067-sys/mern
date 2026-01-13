@@ -77,11 +77,45 @@
 // }
 // export default App
  
-import Counter from "./counter"
-function App() {
+// import Counter from "./counter"
+// function App() {
+// 	return(
+// 		<Counter/>
+// 	)
+// }
+
+// export default App;
+// import React from "react";
+// import UseCounter from "./useCounter";
+// function CounterComponent() {
+// 	const{count,Increment,Decrement,reset} = UseCounter(5);
+// 	return(
+// 		<>
+// 		<div>
+// 			<h1>{count}</h1>
+// 			<button onClick={Increment}>Increment</button>
+// 			<button onClick={reset}>reset</button>
+// 			<button onClick={Decrement}>Decrement</button>
+// 		</div>
+// 		</>
+// 	)
+// }
+// export default CounterComponent;
+
+import React from "react";
+import UseCounter from "./useCounter";
+function CounterComponent(){
+	const{count,Increment,Decrement,reset} = UseCounter(5);
 	return(
-		<Counter/>
+		<>
+		<div>
+			<h1>Count:{count}</h1>
+			<button onClick={Increment}> Increment</button>
+			<button onClick={Decrement}> decrement</button>
+			<button onClick={reset}> reset</button>
+		</div>
+		</>
 	)
 }
 
-export default App;
+export default CounterComponent;

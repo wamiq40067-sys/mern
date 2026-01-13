@@ -74,6 +74,13 @@ import { useState,useEffect } from "react";
 	useEffect(() =>{
 		console.log("useEffect Run")
 	},[count]); 
+
+	// function User() {
+	// const[user,newUser] = useState(" ");
+	// 	useEffect(() =>{
+	// 		console.log("useEffect User run")
+	// 	},[user]);
+	// }
 	return(
 		<>
 		<div>
@@ -82,6 +89,11 @@ import { useState,useEffect } from "react";
 		<button onClick={() => {setCount(count-1)}}>decreased</button>
 		<button onClick={() => {setCount(0)}}>reset</button>
 		</div>
+		{/* <div>
+			<h1>User:{User}</h1>
+			<input type="text" />
+			<button onClick={() => {newUser(user)}}>enter</button>
+		</div> */}
 		</>
 	)
 }
