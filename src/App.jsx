@@ -83,8 +83,8 @@
 // 		<Counter/>
 // 	)
 // }
-
 // export default App;
+
 // import React from "react";
 // import UseCounter from "./useCounter";
 // function CounterComponent() {
@@ -102,20 +102,42 @@
 // }
 // export default CounterComponent;
 
-import React from "react";
-import UseCounter from "./useCounter";
-function CounterComponent(){
-	const{count,Increment,Decrement,reset} = UseCounter(5);
-	return(
-		<>
-		<div>
-			<h1>Count:{count}</h1>
-			<button onClick={Increment}> Increment</button>
-			<button onClick={Decrement}> decrement</button>
-			<button onClick={reset}> reset</button>
-		</div>
-		</>
-	)
+// import React from "react";
+// import UseCounter from "./useCounter";
+// function CounterComponent(){
+// 	const{count,Increment,Decrement,reset} = UseCounter(5);
+// 	return(
+// 		<>
+// 		<div>
+// 			<h1>Count:{count}</h1>
+// 			<button onClick={Increment}> Increment</button>
+// 			<button onClick={Decrement}> decrement</button>
+// 			<button onClick={reset}> reset</button>
+// 		</div>
+// 		</>
+// 	)
+// }
+
+// export default CounterComponent;
+
+import React from 'react'
+import { Routes,Route } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import ContactUs from './pages/ContactUs' 
+import CounterRoute from './pages/CounterRoute'
+import RandomNumbers from './pages/RandomNumbers'
+
+const App = () => {
+  return (
+    <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/counterroute" element={<CounterRoute/>}/>
+        <Route path="/randomnumbers" element={<RandomNumbers/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contactus" element={<ContactUs/>}/>
+    </Routes>
+  )
 }
 
-export default CounterComponent;
+export default App;
