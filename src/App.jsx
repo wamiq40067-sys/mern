@@ -120,24 +120,128 @@
 
 // export default CounterComponent;
 
-import React from 'react'
-import { Routes,Route } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import ContactUs from './pages/ContactUs' 
-import CounterRoute from './pages/CounterRoute'
-import RandomNumbers from './pages/RandomNumbers'
+// import React from 'react'
+// import "../src/styles/Home.css";
 
-const App = () => {
+// import { Routes,Route } from 'react-router-dom'
+// import Home from './pages/Home'
+// import About from './pages/About'
+// import ContactUs from './pages/ContactUs' 
+// import CounterRoute from './pages/CounterRoute'
+// import RandomNumbers from './pages/RandomNumbers'
+
+// const App = () => {
+//   return (
+//     <Routes>
+//         <Route path="/" element={<Home/>}/>
+//         <Route path="/counterroute" element={<CounterRoute/>}/>
+//         <Route path="/randomnumbers" element={<RandomNumbers/>}/>
+//         <Route path="/about" element={<About/>}/>
+//         <Route path="/contactus" element={<ContactUs/>}/>
+//     </Routes>
+//   )
+// }
+
+// export default App;
+
+
+//control components
+
+// import React, { useState } from 'react'
+// const NameForm = () => {
+//   const[name,setName] = useState(""); 
+//   const[email,setEmail] = useState("");
+//   const[password,setPassword] = useState("");
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     console.log(name,email,password);
+//   }
+//   return (
+//     <>
+//     <div>
+//       <h1>Form</h1>
+//       <form onSubmit={handleSubmit}>
+//       <input 
+//       type="text" 
+//       value={name}
+//       onChange={(e) => setName(e.target.value)}
+//       placeholder="Enter your name"/>
+//       {/* <p>your name: {name}</p> */}
+//       <br /><br />
+//       <input 
+//       type="email" 
+//       value={email}
+//       onChange={(e) => setEmail(e.target.value)}
+//       placeholder="Enter your Email"/>
+//       {/* <p>your name: {email}</p> */}
+//       <br /><br />
+//       <input 
+//       type="password" 
+//       value={password}
+//       onChange={(e) => setPassword(e.target.value)}
+//       placeholder='Enter your Password'/>
+//       {/* <p>your Password: {password}</p> */}
+//       <br /><br />
+//       <button type='submit'>submit</button>
+//       </form>
+//     </div>
+//     </>
+//   )
+// }
+
+// export default NameForm;
+
+
+import React, { useState } from 'react'
+import "../src/styles/Form.css"
+
+const FormRevise = () => {
+  const[formData,setFormdata] = useState({
+    name:"",
+    email:"",
+    password:""});
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formData.name == "" ||formData.email == "" || formData.password == ""){
+    alert("please enter Details")
+  } else{
+       console.log(formData.name,formData.email,formData.password); 
+    }
+  }
+  
   return (
-    <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/counterroute" element={<CounterRoute/>}/>
-        <Route path="/randomnumbers" element={<RandomNumbers/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/contactus" element={<ContactUs/>}/>
-    </Routes>
+    <>
+    <div>
+      <h1>Form</h1>
+      <form onSubmit={handleSubmit}>
+      <input 
+      type="text"
+      value={formData.name}
+      onChange={(e) => setFormdata({...formData, name: e.target.value})}
+      placeholder='Enter your name' />
+      <br /><br />
+      <input 
+      type="email" 
+      value={formData.email}
+      onChange={(e) => setFormdata({...formData, email: e.target.value})}
+      placeholder='Enter your Email'/>
+      <br /><br />
+      <input 
+      type="password" 
+      value={formData.password}
+      onChange={(e) => setFormdata({...formData, password: e.target.value})}
+      placeholder='enter your password'/>
+      <br /><br />
+      <button type='submit'>submit</button>
+      </form>
+    </div>
+    </>
   )
 }
 
-export default App;
+export default FormRevise
+
+
+
+
+

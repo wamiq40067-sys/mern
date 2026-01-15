@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    height: 510px;
+    color: red;
+}
+
+div{
+    background-color: rgb(44, 41, 41);
+    padding: 70px;
+    padding-top: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+input:hover{
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6)
+}
+
+button:hover{
+    border-color: #53d4b4;
+    box-shadow: 0 0 10px rgba(27, 169, 112, 0.6)
+}

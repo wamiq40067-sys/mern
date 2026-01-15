@@ -1,0 +1,15 @@
+body{
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    height: 75vh;
+    background-color: rgba(16, 15, 15, 0.909);
+}
+div{
+    background-color: white;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
