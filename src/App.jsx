@@ -211,7 +211,7 @@ const FormRevise = () => {
   
   return (
     <>
-    <div>
+    <div id='main'>
       <h1>Form</h1>
       <form onSubmit={handleSubmit}>
       <input 

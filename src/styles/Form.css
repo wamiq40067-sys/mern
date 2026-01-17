@@ -1,17 +1,27 @@
+
+
 body{
-    display: flex;
-    justify-content: center;
-    place-items: center;
-    height: 510px;
-    color: red;
+    text-align: center;
+    color: #efefec;
+    background-image: url("pexels-danielabsi-952670.jpg");
+    background-size: contain;
 }
 
-div{
-    background-color: rgb(44, 41, 41);
-    padding: 70px;
-    padding-top: 50px;
-    padding-left: 80px;
-    padding-right: 80px;
+#main{
+    position: relative;
+    top: 109px;
+    left: 432px;
+    opacity: 0.4;
+    border: 2px solid black;
+    background-color: rgba(0, 0, 0, 0.486);
+    border-radius: 10px;
+    width: 400px;
+    height: 250px;
+    transition: all 1s ease-in 0s;
+}
+
+#main:hover{
+    opacity: 1;
 }
 
 input:hover{
@@ -23,3 +33,4 @@ button:hover{
     border-color: #53d4b4;
     box-shadow: 0 0 10px rgba(27, 169, 112, 0.6)
 }
+
