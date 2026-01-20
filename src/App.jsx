@@ -270,11 +270,9 @@
 // import React, { useEffect, useState } from 'react'
 
 // const Weather = () => {
-//   const api_key = "5a9278fb868733a63a99b79fbdd65afd"
-//   const city_name = "Lucknow"
 //   const[weather,setWeather] = useState("");
 //   useEffect(() => {
-//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${api_key}&units=metric`)
+//     fetch(``)
 //     .then((response) => response.json())
 //     .then((data) =>{
 //       setWeather(data);
@@ -300,37 +298,85 @@
 
 // export default Weather
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-function App() {
-  const [imgUrl, setImgUrl] = useState("");
+// function App() {
+//   const [imgUrl, setImgUrl] = useState("");
 
-  useEffect(() => {
-    fetch("https://dog.ceo/api/breeds/image/random")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("API Output:", data);   
-        setImgUrl(data.message);            
-      });
+//   useEffect(() => {
+//     fetch("")
+//       .then((res) => res.json())
+//       .then((data) => {
+//         console.log("API Output:", data);   
+//         setImgUrl(data.message);            
+//       });
+//   }, []);
+
+//   return (
+//     <div style={{ textAlign: "center", marginTop: "40px" }}>
+//       <h2>Random Dog Image 🐶</h2>
+
+//       {imgUrl && (
+//         <img
+//           src={imgUrl}
+//           alt="dog"
+//           style={{ width: "300px", borderRadius: "10px" }}
+//         />
+//       )}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// import React, { useEffect, useState } from 'react'
+
+// const Cat = () => {
+//   const[cat,setCat] = useState("");
+//   useEffect(()=> {
+//     fetch("")
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(data);
+//       setCat(data[0]);
+//     });
+//   }, []);
+//   return (
+//     <>
+//     <div>
+//     <h1>Cat</h1>
+//     {cat && (
+//       <img src={cat.url} alt="cat" />
+//     )}  
+//     </div>
+//     </>
+//   )
+// }
+
+// export default Cat
+
+
+import React, { useEffect, useState } from 'react'
+
+const Cat = () => {
+  const[cat,setCat] = useState("");
+  useEffect(()=> {
+    fetch("")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      setCat(data.data[0]);
+    });
   }, []);
-
   return (
-    <div style={{ textAlign: "center", marginTop: "40px" }}>
-      <h2>Random Dog Image 🐶</h2>
-
-      {imgUrl && (
-        <img
-          src={imgUrl}
-          alt="dog"
-          style={{ width: "300px", borderRadius: "10px" }}
-        />
-      )}
+    <>
+    <div>
+    <h1>
+      cat Facts: {cat}
+      </h1>
     </div>
-  );
+    </>
+  )
 }
 
-export default App;
-
-
-
-
+export default Cat
