@@ -1,0 +1,25 @@
+*{
+    padding:0;
+    margin: 0;
+}
+.Link{
+    text-decoration: none;
+    color: #5f4c4c;  
+}
+.Link:hover{
+    text-decoration: underline;
+}
+#main{
+    font-size: 1.5rem;
+    display: flex;
+    background-color: #c5aa6a;
+    justify-content: center ;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 1000px; */
+    gap: 2rem;
+    padding: 0 1rem;
+}
+#h1{
+    color:#2f2626;
+}

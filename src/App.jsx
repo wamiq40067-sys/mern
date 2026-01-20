@@ -192,55 +192,144 @@
 // export default NameForm;
 
 
-import React, { useState } from 'react'
-import "../src/styles/Form.css"
+// import React, { useState } from 'react'
+// import "../src/styles/Form.css"
 
-const FormRevise = () => {
-  const[formData,setFormdata] = useState({
-    name:"",
-    email:"",
-    password:""});
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.name == "" ||formData.email == "" || formData.password == ""){
-    alert("please enter Details")
-  } else{
-       console.log(formData.name,formData.email,formData.password); 
-    }
-  }
+// const FormRevise = () => {
+//   const[formData,setFormdata] = useState({
+//     name:"",
+//     email:"",
+//     password:""});
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (formData.name == "" ||formData.email == "" || formData.password == ""){
+//     alert("please enter Details")
+//   } else{
+//        console.log(formData.name,formData.email,formData.password); 
+//     }
+//   }
   
+//   return (
+//     <>
+//     <div id='main'>
+//       <h1>Form</h1>
+//       <form onSubmit={handleSubmit}>
+//       <input 
+//       type="text"
+//       value={formData.name}
+//       onChange={(e) => setFormdata({...formData, name: e.target.value})}
+//       placeholder='Enter your name' />
+//       <br /><br />
+//       <input 
+//       type="email" 
+//       value={formData.email}
+//       onChange={(e) => setFormdata({...formData, email: e.target.value})}
+//       placeholder='Enter your Email'/>
+//       <br /><br />
+//       <input 
+//       type="password" 
+//       value={formData.password}
+//       onChange={(e) => setFormdata({...formData, password: e.target.value})}
+//       placeholder='enter your password'/>
+//       <br /><br />
+//       <button type='submit'>submit</button>
+//       </form>
+//     </div>
+//     </>
+//   )
+// }
+
+// export default FormRevise
+
+// import React from 'react'
+// import Navbar from './student management app/Navbar'
+// import { Routes,Route } from 'react-router-dom'
+// import StudentHome from './student management app/StudentHome'
+// import Faculty from './student management app/Faculty'
+// import StudentList from './student management app/StudentList'
+// import StudentPage from './student management app/StudentPage'
+
+
+// const App = () => {
+//   return (
+//     <>
+//     <Navbar/>
+//     <Routes>
+//     <Route path='/studenthome' element={<StudentHome/>}></Route>  
+//     <Route path='/studentpage' element={<StudentPage/>}></Route>  
+//     <Route path='/faculty' element={<Faculty/>}></Route>  
+//     <Route path='/studentlist' element={<StudentList/>}></Route>  
+//     </Routes>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+// import React, { useEffect, useState } from 'react'
+
+// const Weather = () => {
+//   const api_key = "5a9278fb868733a63a99b79fbdd65afd"
+//   const city_name = "Lucknow"
+//   const[weather,setWeather] = useState("");
+//   useEffect(() => {
+//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${api_key}&units=metric`)
+//     .then((response) => response.json())
+//     .then((data) =>{
+//       setWeather(data);
+//       console.log(data);
+//     });
+//   },[])
+//   return (
+//     <>
+//     <div>
+//     {weather ? (
+//         <>
+//           <h3>Weather in {weather.name}</h3>
+//           <p>Temperature: {weather.main.temp} °C</p>
+//           <p>Condition: {weather.weather[0].description}</p>
+//         </>
+//       ) : (
+//         <p>Loading...</p>
+//       )}
+//     </div>
+//     </>
+//   )
+// }
+
+// export default Weather
+
+import { useEffect, useState } from "react";
+
+function App() {
+  const [imgUrl, setImgUrl] = useState("");
+
+  useEffect(() => {
+    fetch("https://dog.ceo/api/breeds/image/random")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("API Output:", data);   
+        setImgUrl(data.message);            
+      });
+  }, []);
+
   return (
-    <>
-    <div id='main'>
-      <h1>Form</h1>
-      <form onSubmit={handleSubmit}>
-      <input 
-      type="text"
-      value={formData.name}
-      onChange={(e) => setFormdata({...formData, name: e.target.value})}
-      placeholder='Enter your name' />
-      <br /><br />
-      <input 
-      type="email" 
-      value={formData.email}
-      onChange={(e) => setFormdata({...formData, email: e.target.value})}
-      placeholder='Enter your Email'/>
-      <br /><br />
-      <input 
-      type="password" 
-      value={formData.password}
-      onChange={(e) => setFormdata({...formData, password: e.target.value})}
-      placeholder='enter your password'/>
-      <br /><br />
-      <button type='submit'>submit</button>
-      </form>
+    <div style={{ textAlign: "center", marginTop: "40px" }}>
+      <h2>Random Dog Image 🐶</h2>
+
+      {imgUrl && (
+        <img
+          src={imgUrl}
+          alt="dog"
+          style={{ width: "300px", borderRadius: "10px" }}
+        />
+      )}
     </div>
-    </>
-  )
+  );
 }
 
-export default FormRevise
-
+export default App;
 
 
 

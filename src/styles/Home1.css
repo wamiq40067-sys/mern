@@ -1,0 +1,37 @@
+/* #home{
+    background-color: #404040;
+} */
+
+#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 120px;
+    left: 500px;
+    background-color: #5f4c4c;
+    height: 300px;
+    width: 350px;
+    border-radius: 8px;
+}
+#h11{
+    color: #c5aa6a;
+    position: relative;
+    bottom: 50px;
+}
+#username{
+   position: relative;
+    bottom: 30px;
+}
+#password{
+ position: relative;
+    bottom: 20px;
+}
+#submit{
+    position: relative;
+    bottom: 10px;
+}
+input{
+    border: 2px solid ;
+}
