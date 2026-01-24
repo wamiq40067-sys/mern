@@ -334,7 +334,7 @@
 // const Cat = () => {
 //   const[cat,setCat] = useState("");
 //   useEffect(()=> {
-//     fetch("")
+//     fetch("https://api.thecatapi.com/v1/images/search")
 //     .then((res) => res.json())
 //     .then((data) => {
 //       console.log(data);
@@ -356,27 +356,133 @@
 // export default Cat
 
 
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 
-const Cat = () => {
-  const[cat,setCat] = useState("");
-  useEffect(()=> {
-    fetch("")
+// const Cat = () => {
+//   const[cat,setCat] = useState("");
+//   useEffect(()=> {
+//     fetch("https://meowfacts.herokuapp.com/")
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(data);
+//       setCat(data.data[0]);
+//     });
+//   }, []);
+//   return (
+//     <>
+//     <div>
+//     <h1>
+//       cat Facts: {cat}
+//       </h1>
+//     </div>
+//     </>
+//   )
+// }
+
+// export default Cat
+
+
+// import React, { useEffect, useState } from 'react'
+
+// const Bird = () => {
+//   const[bird,setBird] = useState("");
+//   useEffect(() => {
+//     fetch("https://xeno-canto.org/api/3/recordings")
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(data);
+//       setBird(data.message);
+//     });
+//   }, [])
+//   return (
+//     <div>
+//       <h1>bird:{bird}</h1>
+//     </div>
+//   )
+// }
+
+// export default Bird
+
+
+import React, { useState } from 'react'
+import "../src/styles/Weather.css"
+
+const Weather = () => {
+  const[weather,setWeather] = useState(null);
+  const[city_name,setCity_name] = useState("");
+  // const city_name = "London"
+  const api_key = "5a9278fb868733a63a99b79fbdd65afd";
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${api_key}&units=metric`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      setCat(data.data[0]);
+      setWeather(data);
     });
-  }, []);
+  }
   return (
     <>
-    <div>
-    <h1>
-      cat Facts: {cat}
-      </h1>
+    <div id='main'>
+    <div id='form'>
+    <h1 id='app'>Weather App</h1>
+    <form onSubmit={handleSubmit} >
+      <input type="text" 
+      value={city_name}
+      onChange={(e) => setCity_name(e.target.value)}
+      placeholder='Enter location'
+      id='location'/>
+      <div>
+      <button type='submit' id='submit'>Get Weather</button>
+      </div>
+      </form>
+      </div>
+
+    <div id='status'>
+    {weather?.main && weather?.weather && (
+      <>
+      <h1>Temperature: {weather.main.temp}°C</h1>
+      <h1>Weather Condition: {weather.weather[0].description}</h1>
+      <h1>Humidity: {weather.main.humidity}</h1>
+    </>
+    )}
+    </div>
     </div>
     </>
   )
 }
 
-export default Cat
+export default Weather
+
+
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+
+// function App() {
+//   const [imgUrl, setImgUrl] = useState(null);
+
+//   useEffect(() => {
+//     axios.get("https://dog.ceo/api/breeds/image/random")
+//     .then((res) => {
+//       console.log(res.data);
+//       setImgUrl(res.data.message);
+//     })
+//   }, []);
+
+//   return (
+//     <div style={{ textAlign: "center", marginTop: "40px" }}>
+//       <h2>Random Dog Image 🐶</h2>
+
+//       {imgUrl && (
+//         <img
+//           src={imgUrl}
+//           alt="dog"
+//           style={{ width: "300px", borderRadius: "10px" }}
+//         />
+//       )}
+//     </div>
+//   );
+// }
+
+// export default App;
