@@ -404,56 +404,56 @@
 // export default Bird
 
 
-import React, { useState } from 'react'
-import "../src/styles/Weather.css"
+// import React, { useState } from 'react'
+// import "../src/styles/Weather.css"
 
-const Weather = () => {
-  const[weather,setWeather] = useState(null);
-  const[city_name,setCity_name] = useState("");
-  // const city_name = "London"
-  const api_key = "5a9278fb868733a63a99b79fbdd65afd";
-  const handleSubmit = (e) => {
-    e.preventDefault();
+// const Weather = () => {
+//   const[weather,setWeather] = useState(null);
+//   const[city_name,setCity_name] = useState("");
+//   // const city_name = "London"
+//   const api_key = "5a9278fb868733a63a99b79fbdd65afd";
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${api_key}&units=metric`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      setWeather(data);
-    });
-  }
-  return (
-    <>
-    <div id='main'>
-    <div id='form'>
-    <h1 id='app'>Weather App</h1>
-    <form onSubmit={handleSubmit} >
-      <input type="text" 
-      value={city_name}
-      onChange={(e) => setCity_name(e.target.value)}
-      placeholder='Enter location'
-      id='location'/>
-      <div>
-      <button type='submit' id='submit'>Get Weather</button>
-      </div>
-      </form>
-      </div>
+//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${api_key}&units=metric`)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(data);
+//       setWeather(data);
+//     });
+//   }
+//   return (
+//     <>
+//     <div id='main'>
+//     <div id='form'>
+//     <h1 id='app'>Weather App</h1>
+//     <form onSubmit={handleSubmit} >
+//       <input type="text" 
+//       value={city_name}
+//       onChange={(e) => setCity_name(e.target.value)}
+//       placeholder='Enter location'
+//       id='location'/>
+//       <div>
+//       <button type='submit' id='submit'>Get Weather</button>
+//       </div>
+//       </form>
+//       </div>
 
-    <div id='status'>
-    {weather?.main && weather?.weather && (
-      <>
-      <h1>Temperature: {weather.main.temp}°C</h1>
-      <h1>Weather Condition: {weather.weather[0].description}</h1>
-      <h1>Humidity: {weather.main.humidity}</h1>
-    </>
-    )}
-    </div>
-    </div>
-    </>
-  )
-}
+//     <div id='status'>
+//     {weather?.main && weather?.weather && (
+//       <>
+//       <h1>Temperature: {weather.main.temp}°C</h1>
+//       <h1>Weather Condition: {weather.weather[0].description}</h1>
+//       <h1>Humidity: {weather.main.humidity}</h1>
+//     </>
+//     )}
+//     </div>
+//     </div>
+//     </>
+//   )
+// }
 
-export default Weather
+// export default Weather
 
 
 // import axios from "axios";
@@ -467,6 +467,9 @@ export default Weather
 //     .then((res) => {
 //       console.log(res.data);
 //       setImgUrl(res.data.message);
+//     })
+//     .catch((error) => {
+//       console.log(error);
 //     })
 //   }, []);
 
@@ -486,3 +489,59 @@ export default Weather
 // }
 
 // export default App;
+
+
+
+// import { useEffect, useState } from "react";
+// import axios from "axios";
+
+// function App() {
+//   const [users, setUsers] = useState([]);
+
+//   useEffect(() => {
+//     axios.get("https://jsonplaceholder.typicode.com/users")
+//       .then(res => {
+//         console.log(res.data);
+//         setUsers(res.data);
+//       });
+//   }, []);
+
+//   return (
+//     <div>
+//       <h2>Users List</h2>
+//       {users.map(user => (
+//         <p key={user.id}>{user.address.street} , {user.address.city}</p>
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+import axios from 'axios';
+import React, { useState,useEffect } from 'react'
+
+const App = () => {
+const[users,setUsers] = useState(null);
+useEffect(() => {
+  axios.get("https://randomuser.me/api/")
+  .then((res) => {
+    console.log(res.data.results[0]);
+    setUsers(res.data.results[0]);
+  })
+}, []);
+  return (
+    <div>
+      <h1>List</h1>
+      {users && (
+        <>
+        <p> {users.name.first} {users.name.last} </p>
+        <img src={users.picture.large} alt="image" />
+        </>
+      )}
+    </div>
+  )
+}
+
+export default App
