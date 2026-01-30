@@ -1,4 +1,3 @@
-
 // // // import Hello1 from "./hello1"
 // // // import Welcome from "./Welcome"
 
@@ -40,13 +39,13 @@
 
 // function Header(){
 // 					return <h1>Thin is header</h1>
-// 				}					
+// 				}
 // 			function Footer(){
-// 					return<h2> This is footer </h2> 
-// 				}	
+// 					return<h2> This is footer </h2>
+// 				}
 // 			function App(){
 //         return(
-          
+
 //           <>
 // 					<Header/>
 // 					<p>This is Nested Component</p>
@@ -67,7 +66,6 @@
 // 			)
 // 		}
 // 		export default App
-		
 
 // 		import BgColor from "./BgColor"
 // function App () {
@@ -76,7 +74,7 @@
 // 	)
 // }
 // export default App
- 
+
 // import Counter from "./counter"
 // function App() {
 // 	return(
@@ -126,7 +124,7 @@
 // import { Routes,Route } from 'react-router-dom'
 // import Home from './pages/Home'
 // import About from './pages/About'
-// import ContactUs from './pages/ContactUs' 
+// import ContactUs from './pages/ContactUs'
 // import CounterRoute from './pages/CounterRoute'
 // import RandomNumbers from './pages/RandomNumbers'
 
@@ -144,12 +142,11 @@
 
 // export default App;
 
-
 //control components
 
 // import React, { useState } from 'react'
 // const NameForm = () => {
-//   const[name,setName] = useState(""); 
+//   const[name,setName] = useState("");
 //   const[email,setEmail] = useState("");
 //   const[password,setPassword] = useState("");
 //   const handleSubmit = (e) => {
@@ -161,22 +158,22 @@
 //     <div>
 //       <h1>Form</h1>
 //       <form onSubmit={handleSubmit}>
-//       <input 
-//       type="text" 
+//       <input
+//       type="text"
 //       value={name}
 //       onChange={(e) => setName(e.target.value)}
 //       placeholder="Enter your name"/>
 //       {/* <p>your name: {name}</p> */}
 //       <br /><br />
-//       <input 
-//       type="email" 
+//       <input
+//       type="email"
 //       value={email}
 //       onChange={(e) => setEmail(e.target.value)}
 //       placeholder="Enter your Email"/>
 //       {/* <p>your name: {email}</p> */}
 //       <br /><br />
-//       <input 
-//       type="password" 
+//       <input
+//       type="password"
 //       value={password}
 //       onChange={(e) => setPassword(e.target.value)}
 //       placeholder='Enter your Password'/>
@@ -191,7 +188,6 @@
 
 // export default NameForm;
 
-
 // import React, { useState } from 'react'
 // import "../src/styles/Form.css"
 
@@ -205,29 +201,29 @@
 //     if (formData.name == "" ||formData.email == "" || formData.password == ""){
 //     alert("please enter Details")
 //   } else{
-//        console.log(formData.name,formData.email,formData.password); 
+//        console.log(formData.name,formData.email,formData.password);
 //     }
 //   }
-  
+
 //   return (
 //     <>
 //     <div id='main'>
 //       <h1>Form</h1>
 //       <form onSubmit={handleSubmit}>
-//       <input 
+//       <input
 //       type="text"
 //       value={formData.name}
 //       onChange={(e) => setFormdata({...formData, name: e.target.value})}
 //       placeholder='Enter your name' />
 //       <br /><br />
-//       <input 
-//       type="email" 
+//       <input
+//       type="email"
 //       value={formData.email}
 //       onChange={(e) => setFormdata({...formData, email: e.target.value})}
 //       placeholder='Enter your Email'/>
 //       <br /><br />
-//       <input 
-//       type="password" 
+//       <input
+//       type="password"
 //       value={formData.password}
 //       onChange={(e) => setFormdata({...formData, password: e.target.value})}
 //       placeholder='enter your password'/>
@@ -249,23 +245,21 @@
 // import StudentList from './student management app/StudentList'
 // import StudentPage from './student management app/StudentPage'
 
-
 // const App = () => {
 //   return (
 //     <>
 //     <Navbar/>
 //     <Routes>
-//     <Route path='/studenthome' element={<StudentHome/>}></Route>  
-//     <Route path='/studentpage' element={<StudentPage/>}></Route>  
-//     <Route path='/faculty' element={<Faculty/>}></Route>  
-//     <Route path='/studentlist' element={<StudentList/>}></Route>  
+//     <Route path='/studenthome' element={<StudentHome/>}></Route>
+//     <Route path='/studentpage' element={<StudentPage/>}></Route>
+//     <Route path='/faculty' element={<Faculty/>}></Route>
+//     <Route path='/studentlist' element={<StudentList/>}></Route>
 //     </Routes>
 //     </>
 //   )
 // }
 
 // export default App
-
 
 // import React, { useEffect, useState } from 'react'
 
@@ -307,8 +301,8 @@
 //     fetch("")
 //       .then((res) => res.json())
 //       .then((data) => {
-//         console.log("API Output:", data);   
-//         setImgUrl(data.message);            
+//         console.log("API Output:", data);
+//         setImgUrl(data.message);
 //       });
 //   }, []);
 
@@ -347,14 +341,13 @@
 //     <h1>Cat</h1>
 //     {cat && (
 //       <img src={cat.url} alt="cat" />
-//     )}  
+//     )}
 //     </div>
 //     </>
 //   )
 // }
 
 // export default Cat
-
 
 // import React, { useEffect, useState } from 'react'
 
@@ -381,7 +374,6 @@
 
 // export default Cat
 
-
 // import React, { useEffect, useState } from 'react'
 
 // const Bird = () => {
@@ -402,7 +394,6 @@
 // }
 
 // export default Bird
-
 
 // import React, { useState } from 'react'
 // import "../src/styles/Weather.css"
@@ -428,7 +419,7 @@
 //     <div id='form'>
 //     <h1 id='app'>Weather App</h1>
 //     <form onSubmit={handleSubmit} >
-//       <input type="text" 
+//       <input type="text"
 //       value={city_name}
 //       onChange={(e) => setCity_name(e.target.value)}
 //       placeholder='Enter location'
@@ -454,7 +445,6 @@
 // }
 
 // export default Weather
-
 
 // import axios from "axios";
 // import { useEffect, useState } from "react";
@@ -490,8 +480,6 @@
 
 // export default App;
 
-
-
 // import { useEffect, useState } from "react";
 // import axios from "axios";
 
@@ -518,30 +506,84 @@
 
 // export default App;
 
+// import axios from 'axios';
+// import React, { useState,useEffect } from 'react'
 
-import axios from 'axios';
-import React, { useState,useEffect } from 'react'
+// const App = () => {
+// const[users,setUsers] = useState(null);
+// useEffect(() => {
+//   axios.get("https://randomuser.me/api/")
+//   .then((res) => {
+//     console.log(res.data.results[0]);
+//     setUsers(res.data.results[0]);
+//   })
+// }, []);
+//   return (
+//     <div>
+//       <h1>List</h1>
+//       {users && (
+//         <>
+//           <p>{users.name.first} {users.name.last}</p>
+//           <p>living in: {users.location.country}</p>
+//           <img src={users.picture.large} alt="image" />
+//         </>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default App
+
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import SignUpPage from "./revision/SignUpPage";
+import LoginPage from "./revision/LoginPage";
+import DashboardPage from "./revision/DashboardPage";
+import HomePage from "./revision/HomePage";
+import ProfilePage from "./revision/ProfilePage";
+import UserListPage from "./revision/UserListPage";
+import Logout from "./revision/Logout";
 
 const App = () => {
-const[users,setUsers] = useState(null);
-useEffect(() => {
-  axios.get("https://randomuser.me/api/")
-  .then((res) => {
-    console.log(res.data.results[0]);
-    setUsers(res.data.results[0]);
-  })
-}, []);
+  const [users, setUsers] = useState([]);  //info is stored through different component
+  const [currentUser, setCurrentUser] = useState(null); // accessing user info in dashboard
   return (
-    <div>
-      <h1>List</h1>
-      {users && (
-        <>
-        <p> {users.name.first} {users.name.last} </p>
-        <img src={users.picture.large} alt="image" />
-        </>
-      )}
-    </div>
-  )
-}
+    <>
+      <div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <LoginPage
+                users={users}
+                setCurrentUser={setCurrentUser}
+              /> /*prop using*/
+            }
+          ></Route>
+          <Route
+            path="/signuppage"
+            element={
+              <SignUpPage users={users} setUsers={setUsers} />
+            } /*prop using*/
+          ></Route>
+          <Route path="/dashboardpage" element={<DashboardPage />}>
+            <Route path="homepage" element={<HomePage />}></Route>
+            <Route
+              path="profilepage"
+              element={<ProfilePage user={currentUser} />} /*prop using*/
+            ></Route>
+            <Route path="userlistpage" element={<UserListPage />}></Route>
+            <Route
+              path="logout"
+              element={
+                <Logout setCurrentUser={setCurrentUser} /*prop using*/ />
+              }
+            ></Route>
+          </Route>
+        </Routes>
+      </div>
+    </>
+  );
+};
 
-export default App
+export default App;

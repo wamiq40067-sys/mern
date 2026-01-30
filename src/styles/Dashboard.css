@@ -1,0 +1,20 @@
+#body{
+    background-color: #ffc900;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.links{
+    text-decoration: none;
+    color: 	#1d1d1d;
+}
+.links:hover{
+    text-decoration: underline;
+}
+
+#navbar{
+    color: 	#454679;
+}

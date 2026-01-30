@@ -1,0 +1,34 @@
+#login{
+    background-color: pink;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 130px;
+    left: 370px;
+    width: 500px;
+    height: 250px;
+}
+#email,#password,#submit{
+    margin-bottom: 10px;
+}
+
+#submit{
+    position: relative;
+    left: 50px;
+}
+#link{
+    position: relative;
+    left: 50px;
+    text-decoration: none;
+}
+#link:hover,#backtologin:hover{
+    text-decoration: underline;
+}
+#backtologin{
+    position: relative;
+    right: 8px;
+    text-decoration: none;
+}

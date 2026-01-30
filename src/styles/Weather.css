@@ -5,12 +5,16 @@ body{
     text-align: center;
     position: relative;
     top: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 #form{
     position: relative;
     bottom: 90px;
-    right: 10px;
     display: flex;
     justify-content: center;;
     align-items: center;
@@ -22,9 +26,9 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
+    /* position: relative;
     top: 10px;
-    left: 375px;
+    left: 375px; */
     color: #263D42;
     background-color: #8e6c88;
     height: 250px;
